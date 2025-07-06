@@ -1,0 +1,63 @@
+@use '@styles/variables';
+@use '@styles/mixins';
+@use '@styles/fonts';
+@use '@styles/colors';
+
+.discount_section {
+  margin-top: 1rem;
+  .container {
+    @include mixins.container;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    .discounts_title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 28%;
+      .title {
+        @include fonts.H1;
+        cursor: pointer;
+        margin: 0;
+        transition: color 0.3s ease;
+      }
+      .titleArrow {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.2rem;
+        height: 1.2rem;
+        border: none;
+        border-radius: variables.$border-radius-sm;
+        background-color: transparent;
+        transition: color 0.3s ease;
+        .svg {
+          width: 1rem;
+          height: 1rem;
+          fill: currentColor;
+          transition: fill 0.3s ease;
+        }
+      }
+      &:hover {
+        .title {
+          color: colors.$blue;
+        }
+        .titleArrow {
+          color: colors.$blue;
+        }
+      }
+    }
+    .discount_items {
+      display: grid;
+      grid-template-columns: repeat(4, 19.5rem);
+      gap: 4.37rem 1.25rem;
+      position: relative;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+  }
+}
+.loading {
+  @include mixins.loading;
+}

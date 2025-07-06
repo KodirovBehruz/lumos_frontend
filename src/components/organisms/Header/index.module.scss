@@ -1,0 +1,104 @@
+@use '@styles/mixins';
+@use '@styles/colors';
+@use '@styles/variables';
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: variables.$z-index-header;
+  height: 10.5rem;
+  background: colors.$light;
+  box-shadow: colors.$shadow-sm;
+  transition: top 0.3s ease;
+  &.hidden {
+    top: -10.5rem;
+  }
+  .container {
+    @include mixins.container;
+    .header_info {
+      display: flex;
+      border-bottom: 0.063rem solid colors.$gray-alt;
+      &_clock,
+      &_address {
+        display: flex;
+        align-items: center;
+        padding: 0.8125rem 0;
+        line-height: 1;
+        color: colors.$gray;
+        .clockIcon,
+        .addressIcon {
+          color: colors.$gray-alt;
+          margin-right: 0.25rem;
+          flex: 0 0 auto;
+        }
+        p {
+          text-align: right;
+          white-space: pre-wrap;
+        }
+      }
+      &_list {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 1rem;
+
+        .listLink {
+          color: colors.$gray;
+          transition: color 0.3s ease-in-out;
+          &:hover {
+            color: colors.$gray-alt;
+          }
+        }
+      }
+    }
+    .header_action {
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem 0 1.5rem;
+      &_logo {
+        flex: 1 1 auto;
+      }
+      &_fields {
+        display: flex;
+        align-items: center;
+        flex: 1 1 auto;
+        margin-left: 5rem;
+        gap: 1rem;
+        .catalogButton {
+          margin-right: 0.5rem;
+          margin-bottom: 0.2rem;
+          height: 1.25rem;
+          width: 1.25rem;
+          color: colors.$light;
+        }
+        .searchField {
+          flex: 1 1 auto;
+          display: flex;
+          justify-content: center;
+          margin-right: 5rem;
+        }
+        .actionItem {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.125rem;
+          color: colors.$gray;
+          font-size: 0.875rem;
+          margin-left: 1rem;
+          cursor: pointer;
+          transition: color 0.3s ease-in-out;
+          &:hover {
+            color: colors.$gray-alt;
+          }
+          .actionIcon {
+            width: 2rem;
+            height: 2rem;
+            transition: color 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}

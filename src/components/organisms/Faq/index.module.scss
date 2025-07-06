@@ -1,0 +1,14 @@
+@use '@styles/mixins';
+
+.faq_section {
+  margin-top: 1rem;
+  .container {
+    @include mixins.container;
+    .common_title {
+      @include mixins.common_title;
+    }
+  }
+}
+.loading {
+  @include mixins.loading;
+}

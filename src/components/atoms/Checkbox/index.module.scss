@@ -1,0 +1,45 @@
+@use '@styles/colors';
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  .indicator {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 0.375rem;
+    border: 0.063rem solid colors.$gray-alt;
+    > div {
+      width: 0.625rem;
+      height: 0.625rem;
+      background: colors.$blue-light;
+      border-radius: 0.188rem;
+      opacity: 0;
+    }
+  }
+  .label {
+    margin-left: 0.5rem;
+  }
+  &:hover {
+    .indicator {
+      border-color: colors.$blue-light;
+    }
+  }
+  &.checked {
+    .indicator {
+      border-width: 0.125rem;
+      border-color: colors.$blue-light;
+      > div {
+        opacity: 1;
+      }
+    }
+  }
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}

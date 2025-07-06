@@ -1,0 +1,51 @@
+@use '@styles/colors';
+
+.catalog_filters {
+  background-color: colors.$primary;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: colors.$shadow-sm;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  &_inStock,
+  &_discount {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+  }
+  &_price {
+    padding-top: 1rem;
+    border-top: 0.05rem solid colors.$gray-alt;
+  }
+  &_categories,
+  &_sizeType {
+    border-top: 0.05rem solid colors.$gray-alt;
+    padding-top: 1rem;
+    .radioGroup {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+  }
+  &_resetButton {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: colors.$primary;
+    border: 0.0625rem solid colors.$light-alt;
+    &:hover {
+      background-color: colors.$primary;
+      border-color: colors.$blue-alt;
+    }
+  }
+}
+.radioLabel {
+  font-size: 1.1rem;
+}
+.filterTitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: colors.$gray-alt;
+}

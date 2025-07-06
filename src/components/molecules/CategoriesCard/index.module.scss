@@ -1,0 +1,44 @@
+@use '@styles/colors';
+@use '@styles/variables';
+
+.category_item {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  width: 12rem;
+  border-radius: variables.$border-radius-sm;
+  background-color: colors.$primary;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  &:hover {
+    box-shadow: colors.$shadow-lg;
+    transform: translateY(-0.1rem);
+  }
+  &_image {
+    border-radius: variables.$border-radius-sm;
+    padding: 1.25rem 1.25rem;
+    height: 8rem;
+    width: 8.625rem;
+    border: 0.0625rem solid colors.$primary;
+    background-color: colors.$light;
+    color: colors.$dark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &_name {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 0.5rem;
+    color: colors.$dark;
+  }
+}

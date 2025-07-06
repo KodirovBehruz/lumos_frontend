@@ -1,0 +1,28 @@
+@use '@styles/colors';
+@use '@styles/mixins';
+
+.review_section {
+  margin-top: 10rem;
+  .container {
+    @include mixins.container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .review_items {
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 23.5rem);
+      gap: 1.25rem;
+      margin-top: 3.125rem;
+    }
+    .review_more {
+      p {
+        font-size: 1rem;
+        color: colors.$blue-light;
+        cursor: pointer;
+        margin-top: 1.25rem;
+      }
+    }
+  }
+}

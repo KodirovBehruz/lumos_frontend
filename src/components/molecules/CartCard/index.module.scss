@@ -1,0 +1,63 @@
+@use '@styles/colors';
+
+.product {
+  display: flex;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  width: 70%;
+  .product_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    &_image {
+      width: 5rem;
+      height: 5rem;
+      flex-shrink: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &_text {
+      width: 20rem;
+      flex-grow: 1;
+      color: colors.$text-color;
+      font-weight: 500;
+    }
+    &_quantity {
+      font-weight: 600;
+      color: colors.$text-color;
+      text-align: center;
+    }
+    &_price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .productPrice {
+        font-weight: bold;
+        color: colors.$blue-light;
+        s {
+          font-size: 0.8rem;
+          color: colors.$light-alt;
+        }
+      }
+    }
+    &_buttons {
+      display: flex;
+      gap: 1rem;
+      .deleteButton,
+      .favoriteButton {
+        width: 3rem;
+        height: 3rem;
+        background-color: colors.$primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.065rem solid colors.$light;
+        cursor: pointer;
+      }
+    }
+  }
+}

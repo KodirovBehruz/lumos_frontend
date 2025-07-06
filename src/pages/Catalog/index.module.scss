@@ -1,0 +1,49 @@
+@use '@styles/mixins';
+
+.catalog_page {
+  margin-top: 1rem;
+  .container {
+    @include mixins.container;
+    .common_title {
+      @include mixins.common_title;
+    }
+    .catalog_content {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .catalog_items {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        bottom: -4rem;
+        left: 0;
+        padding: 1rem 0;
+      }
+    }
+  }
+}
+.loading {
+  @include mixins.loading
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-column: span 3;
+  .emptyIcon {
+    width: 10rem;
+    margin-bottom: 1rem;
+    margin-top: 7rem;
+  }
+}

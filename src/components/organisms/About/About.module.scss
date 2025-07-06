@@ -1,0 +1,69 @@
+@use "common" as cm;
+
+.about_section {
+    margin-top: 10rem;
+    .container {
+        @include cm.container;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .common_title {
+            @include cm.common_title;
+
+            & span {
+                color: var(--color-blue);
+            }
+        }
+
+        .about_image {
+            width: 100%;
+            max-width: 73.75rem;
+            height: auto;
+            margin-bottom: 1.87rem;
+        }
+        .about_items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4.37rem 1.25rem;
+
+            .about_item {
+                padding: 2.5rem;
+                border-radius: 0.62rem;
+                width: 35.94rem;
+                height: 18rem;
+                background-color: #17181D;
+                box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.4);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+                }
+
+                .about_item_icon {
+                    width: 4.37rem;
+                    height: 2.5rem;
+                    float: left;
+                }
+
+                .about_item_text {
+                    margin-top: 3.75rem;
+                    font-size: 1.37rem;
+                    line-height: 1.5;
+                    color: #F1F1F1;
+                    width: 21.88rem;
+                }
+
+                .about_item_button {
+                    margin-top: 1.87rem;
+
+                    .button_icon {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

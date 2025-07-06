@@ -1,0 +1,19 @@
+@use '@styles/colors';
+
+.faq_item {
+  border-bottom: 0.06rem solid colors.$dark-alt;
+  padding: 0.62rem 0;
+  &_question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  &_answer {
+    margin-top: 0.62rem;
+    font-size: 1rem;
+    color: colors.$text-color;
+  }
+}

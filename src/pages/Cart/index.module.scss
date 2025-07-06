@@ -1,0 +1,29 @@
+@use '@styles/mixins';
+@use '@styles/fonts';
+
+.cart {
+  .container {
+    @include mixins.container;
+    .infoBlock {
+      .title {
+        @include fonts.H1;
+        cursor: pointer;
+        margin: 3rem 0;
+      }
+    }
+    .cartBlock {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      padding-bottom: 3rem;
+      gap: 1.5rem;
+      .info {
+        width: 15rem;
+      }
+    }
+  }
+}
+
+.loading {
+  @include mixins.loading
+}

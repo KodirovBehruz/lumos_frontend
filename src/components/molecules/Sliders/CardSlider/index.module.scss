@@ -1,0 +1,73 @@
+@use '@styles/mixins';
+@use '@styles/colors';
+@use '@styles/fonts';
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+  .title {
+    @include fonts.H1;
+    color: colors.$text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.0125rem;
+    text-align: center;
+    flex: 1;
+    transition: color 0.3s ease;
+    &:hover {
+      color: colors.$blue-light;
+    }
+  }
+  .prev,
+  .next {
+    background: colors.$light;
+    border: none;
+    padding: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: colors.$shadow-slider;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &:hover {
+      box-shadow: colors.$shadow-slider-hover;
+      transform: translateY(-50%) scale(1.1);
+    }
+  }
+  .prev {
+    left: -0.1rem;
+  }
+  .next {
+    right: -0.1rem;
+  }
+}
+.wrapper {
+  @include mixins.container;
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+  background: colors.$light;
+  box-shadow: colors.$shadow-sm;
+  overflow: hidden;
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
