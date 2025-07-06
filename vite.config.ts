@@ -27,13 +27,6 @@ export default defineConfig(({ mode }) => {
       }
     },
     plugins: [react()],
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `@use '@styles/import' as *;\n`,
-        },
-      },
-    },
     server: {
       host: true,
       port: 5173,

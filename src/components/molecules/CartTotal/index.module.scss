@@ -1,18 +1,18 @@
 .info_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  &_quantity,
+  &_price {
+    font-size: 1.15rem;
+    width: 100%;
+    font-weight: 700;
+    line-height: 1.375rem;
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    &_quantity,
-    &_price {
-        font-size: 1.15rem;
-        width: 100%;
-        font-weight: 700;
-        line-height: 1.375rem;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-    }
-    &_button {
-        width: 100%;
-    }
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  &_button {
+    width: 100%;
+  }
 }
